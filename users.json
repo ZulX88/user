@@ -1,7 +1,7 @@
 {
     "users":{
         "admin":{
-            "password":"555",
+            "password":"==+()",
             "status": true
         }
     }
