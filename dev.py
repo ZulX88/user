@@ -1,2 +1,2 @@
 while(True):
-  input("Hahaha: ")
+  cnc = input("Hahaha: ")
