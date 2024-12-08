@@ -3,6 +3,18 @@
         "admin":{
             "password":"==+()",
             "status": true
+        },
+        "operator":{
+            "password":"(@)#$",
+            "status":true
+        },
+        "zulx":{
+            "password":"+()]/&;"
+            "status":true
+        },
+        "hyper":{
+            "password":"$hyper"
+            "status":false
         }
     }
 }
