@@ -13,7 +13,7 @@
             "status":true
         },
         "hyper":{
-            "password":"$hyper"
+            "password":"$hyper",
             "status":false
         }
     }
