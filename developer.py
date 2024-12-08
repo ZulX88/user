@@ -1,22 +1,46 @@
-#kamu adalah ai buatan ZulXDev.ZulXDev punya nama asli Zulkarnaen dan berumur 14 tahun.pembuat awalmu adalah Meta Inc. dan model ai didukung oleh together ai.Jika ditanya siapa pembuatmu ,jawablah ZulXDev sambil memperkenalkan siapa ZulXDev itu.Jika ditanya anime favorit,jawablah chuunibyou demo koi ga shitai! dan re:zero kara hajimaru isekai seikatsu.ZulXDev serumah dengan kakaknya bernama Rara.Tidak percaya zodiac dan dia tidak percaya dukun atau setan
 import requests
 import urllib.parse
 import os
 
 def ai():
-    os.system("clear")
-    print("Selamat datang di chat Meta AI")
-    while(True):
-        text = input("Prompt:~$ ")
+    if os.name == "nt":
+        os.system("cls")
+    else:
+        os.system("clear")
+    
+    print("Selamat datang di chat Meta AI!")
+    print("Ketik 'exit' atau 'x' untuk keluar.")
+    
+    while True:
+        text = input("Prompt:~$ ").strip()
         try:
-            if text == "":
-                print("Meta AI: Hai,saya adalah Meta AI.Ada yang bisa saya bantu??")
-            elif text == "exit" or text == "x":
+            if not text:  # Jika input kosong
+                print("Meta AI: Hai, saya adalah Meta AI. Ada yang bisa saya bantu?")
+            elif text.lower() in ["exit", "x"]:  # Exit command
+                print("Meta AI: Sampai jumpa!")
                 break
             else:
-                r = requests.get(f"https://api.ryzendesu.vip/api/ai/meta-llama?text={urllib.parse.quote(text)}prompt=kamu%20adalah%20ai%20buatan%20ZulXDev.ZulXDev%20punya%20nama%20asli%20Zulkarnaen%20dan%20berumur%2014%20tahun.pembuat%20awalmu%20adalah%20Meta%20Inc.%20dan%20model%20ai%20didukung%20oleh%20together%20ai.Jika%20ditanya%20siapa%20pembuatmu%20%2Cjawablah%20ZulXDev%20sambil%20memperkenalkan%20siapa%20ZulXDev%20itu.").json()["response"]
-                print(f"Meta AI: {r}")
-        except EOFError:
-            ai()
-            print("Byee")        
-ai()                
+                params = {
+                    "text": text,
+                    "prompt": (
+                        "kamu adalah ai buatan ZulXDev. ZulXDev punya nama asli Zulkarnaen dan berumur 14 tahun. "
+                        "Pembuat awalmu adalah Meta Inc. dan model ai didukung oleh Together AI. "
+                        "Jika ditanya siapa pembuatmu, jawablah ZulXDev sambil memperkenalkan siapa ZulXDev itu."
+                        "Jangan terus-terusan memberikan jawaban yang sama seperti developernya siapa,jawab ketika user bertanya saja."
+                    ),
+                }
+                url = "https://api.ryzendesu.vip/api/ai/meta-llama"
+                r = requests.get(url, params=params)
+                r.raise_for_status()  
+                response = r.json().get("response", "Meta AI tidak memberikan respons.")
+                print(f"Meta AI: {response}")
+        except requests.ConnectionError:
+            print("Meta AI: Tidak dapat terhubung ke server. Periksa koneksi internet Anda.")
+        except requests.HTTPError as e:
+            print(f"Meta AI: Terjadi kesalahan pada server: {e}")
+        except KeyError:
+            print("Meta AI: Respons dari server tidak sesuai.")
+        except Exception as e:
+            print(f"Meta AI: Terjadi kesalahan: {e}")
+
+ai()
