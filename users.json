@@ -15,6 +15,10 @@
         "hyper":{
             "password":"$hyper",
             "status":false
+        },
+        "zentkz":{
+            "password":"1234",
+            "status":true
         }
     }
 }
