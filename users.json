@@ -1,24 +1,31 @@
 {
-    "users":{
-        "admin":{
-            "password":"==+()",
-            "status": true
-        },
-        "operator":{
-            "password":"(@)#$",
-            "status":true
-        },
-        "zulx":{
-            "password":"+()]/&;",
-            "status":true
-        },
-        "hyper":{
-            "password":"$hyper",
-            "status":false
-        },
-        "zentkz":{
-            "password":"1234",
-            "status":true
-        }
+  "users": {
+    "admin": {
+      "password": "==+()",
+      "status": true
+    },
+    "operator": {
+      "password": "(@)#$",
+      "status": true
+    },
+    "zulx": {
+      "password": "+()]/&;",
+      "status": true
+    },
+    "hyper": {
+      "password": "$hyper",
+      "status": false
+    },
+    "zentkz": {
+      "password": "1234",
+      "status": true
     }
+  },
+  "7637428825": {
+    "name": "zul",
+    "email": "pythonzulx@gmail.com",
+    "otp": "677001",
+    "verified": false,
+    "otpExpiry": 1742569735961
+  }
 }
