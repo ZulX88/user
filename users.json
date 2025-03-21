@@ -10,7 +10,7 @@
     "name": "lioraa",
     "email": "liora@zulx.my.id",
     "otp": "303546",
-    "verified": false,
+    "verified": true,
     "otpExpiry": 1742574148287
   }
 }
