@@ -3,7 +3,7 @@
     "name": "zul",
     "email": "pythonzulx@gmail.com",
     "otp": "381373",
-    "verified": false,
+    "verified": true,
     "otpExpiry": 1742573910964
   }
 }
